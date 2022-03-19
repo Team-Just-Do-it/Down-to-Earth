@@ -22,10 +22,10 @@ const Header = styled.header`
   margin-bottom: 68px;
 
   h2 {
+    margin-bottom: 29px;
     font-weight: 500;
     font-size: 24px;
     line-height: 35px;
-    margin-bottom: 29px;
   }
 `;
 
@@ -39,10 +39,10 @@ const CategoryNav = styled.nav`
   }
 
   li {
-    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 150px;
     border: 1px solid #847258;
     border-collapse: collapse;
     font-size: 20px;
