@@ -1,16 +1,14 @@
 import styled from "@emotion/styled";
 
-export default function ProductsList() {
+export default function EventsList() {
   return (
     <Header>
-      <h2>카테고리</h2>
+      <h2>이벤트</h2>
       <CategoryNav>
-        <ul className="products-category-list">
-          <li>전체</li>
-          <li className="products-beauty">뷰티</li>
-          <li className="products-bath current">욕실</li>
-          <li className="products-kitchen">주방</li>
-          <li className="products-etc">잡화</li>
+        <ul className="events-category-list">
+          <li className="current">전체</li>
+          <li className="events-promotion">프로모션</li>
+          <li className="events-collaboration">콜라보레이션</li>
         </ul>
       </CategoryNav>
     </Header>
@@ -33,9 +31,9 @@ const CategoryNav = styled.nav`
   width: 100%;
   max-width: 600px;
 
-  .products-category-list {
-    height: 50px;
+  .events-category-list {
     display: flex;
+    height: 50px;
   }
 
   li {
