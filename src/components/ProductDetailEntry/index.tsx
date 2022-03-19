@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import ProductsList from "../productsList";
+import ProductsList from "../ProductsList";
 import ProductReview from "../ProductReview";
 
 export default function ProductDetailEntry() {
