@@ -34,8 +34,8 @@ const CategoryNav = styled.nav`
   max-width: 600px;
 
   .products-category-list {
-    height: 50px;
     display: flex;
+    height: 50px;
   }
 
   li {
