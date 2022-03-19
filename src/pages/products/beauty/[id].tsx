@@ -242,7 +242,7 @@ const ControlQuantity = styled.div`
     width: 50px;
     border: 1px solid #847258;
     outline: 0;
-    background: url("/minus.png") no-repeat center;
+    background: url("/assets/minus.png") no-repeat center;
     background-color: #fff;
     cursor: pointer;
   }
@@ -251,7 +251,7 @@ const ControlQuantity = styled.div`
     width: 50px;
     border: 1px solid #847258;
     outline: 0;
-    background: url("/plus.png") no-repeat center;
+    background: url("/assets/plus.png") no-repeat center;
     background-color: #fff;
     cursor: pointer;
   }
