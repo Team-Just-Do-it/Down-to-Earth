@@ -8,7 +8,7 @@ export const size = {
 
 const theme = {
   mainColor: "#847258",
-  mq: {
+  mediaQuery: {
     laptop: `@media only screen and (min-width: ${size.largest})`,
     tablet: `@media only screen and (min-width: ${size.large})`,
     mobile: `@media only screen and (min-width: ${size.small})`,
