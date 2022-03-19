@@ -4,7 +4,8 @@ import emotionReset from "emotion-reset";
 const style = css`
   ${emotionReset}
   html,
-  body {
+  body, #__next {
+    height: 100%;
     padding: 0;
     margin: 0;
     font-family: "Noto Sans KR", sans-serif;
