@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { Navigation } from ".";
+import { Navigation } from "./Navigation";
 import { Footer } from "./Footer";
 
 export const Layout: React.FC = ({ children }) => {

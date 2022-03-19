@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
-styled;
 
 export const Navigation = () => {
   return (

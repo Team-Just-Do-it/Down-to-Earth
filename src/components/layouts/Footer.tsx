@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-styled;
 
 export const Footer = () => {
   return <FooterContainer>down to earth. All rights reserved</FooterContainer>;
