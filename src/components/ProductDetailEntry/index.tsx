@@ -93,14 +93,15 @@ export default function ProductDetailEntry() {
 }
 
 const PurchaseContainer = styled.div`
-  margin-top: 63px;
   display: flex;
   align-items: center;
+  margin-top: 63px;
 
   .purchase-button,
   .cart-button {
     width: 217px;
     height: 50px;
+    margin-right: 20px;
     background: #847258;
     border: none;
     border-radius: 10px;
@@ -108,7 +109,6 @@ const PurchaseContainer = styled.div`
     line-height: 29px;
     text-align: center;
     color: #ffffff;
-    margin-right: 20px;
   }
 
   .cart-button {
@@ -137,13 +137,13 @@ const PurchaseContainer = styled.div`
 `;
 
 const TotalPrice = styled.div`
-  width: 100%;
-  max-width: 557px;
-  margin-top: 60px;
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 557px;
+  margin-top: 60px;
 
   .total-price-title {
     font-weight: 400;
@@ -277,9 +277,9 @@ const QuantityWrapper = styled.div`
 `;
 
 const ControlQuantity = styled.div`
+  display: flex;
   width: 155px;
   height: 50px;
-  display: flex;
   padding-left: 28px;
 
   .product-quantity {
@@ -352,19 +352,19 @@ const PriceWrapper = styled.div`
 const NormalPriceInfo = styled.div`
   width: 174px;
   height: 129px;
+  padding: 29px 0 0 20px;
   border-right: 1px solid #847258;
   font-weight: 400;
   font-size: 20px;
   line-height: 29px;
-  padding: 29px 0 0 20px;
 
   .title {
     display: block;
+    margin-bottom: 6px;
     font-weight: 400;
     font-size: 20px;
     line-height: 29px;
     color: #666666;
-    margin-bottom: 6px;
   }
 
   .price {
@@ -378,19 +378,19 @@ const NormalPriceInfo = styled.div`
 const SalePriceInfo = styled.div`
   width: 174px;
   height: 129px;
+  padding: 29px 0 0 17px;
   border-right: 1px solid #847258;
   font-weight: 400;
   font-size: 20px;
   line-height: 29px;
-  padding: 29px 0 0 17px;
 
   .title {
     display: block;
+    margin-bottom: 6px;
     font-weight: 400;
     font-size: 20px;
     line-height: 29px;
     color: #666666;
-    margin-bottom: 6px;
   }
 
   .price {
@@ -410,9 +410,9 @@ const ImageWrapper = styled.div`
     margin: 0 94px 14px 0;
   }
   .product-main-subimages {
+    display: flex;
     width: 100%;
     height: 80px;
-    display: flex;
 
     div {
       width: 80px;
@@ -441,7 +441,6 @@ const Main = styled.main`
   }
   .product-info-wrap {
     display: flex;
-
     align-items: center;
   }
 `;
