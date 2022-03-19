@@ -22,6 +22,12 @@ const style = css`
     box-sizing: border-box;
   }
 
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
   @font-face {
     font-family: "Noto Sans KR", sans-serif;
     font-style: thin;
