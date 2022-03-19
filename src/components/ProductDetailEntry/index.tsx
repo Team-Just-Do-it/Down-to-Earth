@@ -48,7 +48,7 @@ export default function ProductDetailEntry() {
                   type="number"
                   className="product-quantity"
                   name="product-quantity"
-                  value="0"
+                  defaultValue="0"
                 />
                 <button className="plus-button"></button>
               </ControlQuantity>
