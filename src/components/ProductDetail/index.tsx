@@ -1,8 +1,13 @@
 import styled from "@emotion/styled";
+<<<<<<< HEAD:src/components/ProductDetailEntry/index.tsx
 import ProductsList from "../ProductsList";
 import ProductReview from "../ProductReview";
+=======
+import ProductsList from "../productsList";
+import ProductReview from "../ProductReviewList";
+>>>>>>> e553cc2 (💄Add: Review Component and add on pageDetail):src/components/ProductDetail/index.tsx
 
-export default function ProductDetailEntry() {
+export default function ProductDetail() {
   return (
     <Main>
       <h1 className="ir">상품 디테일 페이지</h1>

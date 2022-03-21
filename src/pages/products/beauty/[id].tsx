@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import ProductDetailEntry from "../../../components/ProductDetailEntry";
+import ProductDetail from "../../../components/ProductDetail";
 
-export default function ProductDetail() {
-  return <ProductDetailEntry></ProductDetailEntry>;
+export default function ProductDetails() {
+  return <ProductDetail />;
 }
