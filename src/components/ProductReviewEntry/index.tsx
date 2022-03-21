@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import SmallStar from "../shared/SmallStarRating";
+import Button from "../shared/Button";
 
 export default function ProductReviewEntry() {
   return (
@@ -26,7 +27,7 @@ export default function ProductReviewEntry() {
           있으며, 살았으며, 영락과 노래하며 운다.
         </ReviewText>
 
-        <button className="review-comment-button">댓글 2</button>
+        <Button type="button">댓글 2</Button>
       </ReviewInfo>
     </Review>
   );
