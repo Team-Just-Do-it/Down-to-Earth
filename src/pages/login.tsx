@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import type { NextPage } from "next";
 import styled from "@emotion/styled";
+import Link from "next/link";
 
 const Login: NextPage = () => {
   const [idCheck, setIdCheck] = useState("");
@@ -15,7 +16,7 @@ const Login: NextPage = () => {
         <label htmlFor="user-id"></label>
         <input type="text" id="user-id" placeholder="이메일" />
         <label htmlFor="user-pw"></label>
-        <input type="passworkd" id="user-pw" placeholder="비밀번호" />
+        <input type="password" id="user-pw" placeholder="비밀번호" />
         <TextAlert>아이디 또는 비밀번호가 일치하지 않습니다.</TextAlert>
         {/* {idError && <TextAlert>아이디 또는 비밀번호가 일치하지 않습니다.</TextAlert>}  */}
         <LoginButton type="button">로그인</LoginButton>
@@ -23,7 +24,7 @@ const Login: NextPage = () => {
         <NaverLoginButton type="button">네이버로 로그인</NaverLoginButton>
         <TextJoin>
           아직 회원이 아니신가요?
-          <a href="">회원가입 바로가기</a>
+          <Link href="/join">회원가입 바로가기</Link>
         </TextJoin>
       </LoginForm>
     </LoginContainer>
