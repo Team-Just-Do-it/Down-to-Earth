@@ -1,10 +1,10 @@
 import React, { useState } from "react"; 
 import type { NextPage } from "next";
-import styled from "@emotion/styled"
+import styled from "@emotion/styled" 
 
 const Join: NextPage = () => {
 
-  return (
+  return (  
     <JoinContainer>
       <JoinForm>
         <h2>회원가입</h2>	
