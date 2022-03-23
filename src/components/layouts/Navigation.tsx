@@ -36,20 +36,20 @@ const Header = styled.header`
   justify-content: space-between; 
   align-items: center;
   width: 100%; 
-  height: 8rem;
+  height: 80px;
   box-sizing: border-box; 
-  padding: 0 10rem; 
+  padding: 0 100px; 
 `
 
 const Navigator = styled.nav`
+  width: 100%; 
   display: flex; 
   justify-content: space-between;
   align-items: center; 
-  width: 100%; 
 
   img {
-    height: 2.5rem;
-    margin-bottom: 1rem;
+    height: 25px;
+    margin-bottom: 10px;
     cursor: pointer; 
   }
 
@@ -68,12 +68,12 @@ const Navigator = styled.nav`
 
   input {
     background: url("/assets/search.svg") no-repeat 1rem 0.9rem; 
-    width: 25rem;
-    height: 4rem; 
-    border-radius: 4rem; 
+    width: 250px;
+    height: 40px; 
+    border-radius: 40px; 
     border: 1px solid #A1A1A1; 
     box-sizing: border-box;
-    padding:  0 4rem ;
+    padding:  0 40px;
   } 
 `
 
@@ -88,7 +88,7 @@ const LoggedInContainer = styled.div`
   
 `
 const JoinContainer = styled.div`
-  width: 12rem;
+  width: 120px;
   display: flex; 
   justify-content: space-between;
   flex-shrink: 0; 
@@ -100,12 +100,12 @@ const CartIconContainer = styled.div`
 
   div {  
     position: absolute; 
-    left: 1.3rem; 
-    top: 1.5rem;
-    width: 2rem; 
-    height: 2rem;
+    left: 13px; 
+    top: 15px;
+    width: 20px; 
+    height: 20px;
     background: #847258;
-    border-radius: 2.4rem; 
+    border-radius: 24px; 
     text-align: center;
   }
   
