@@ -1,23 +1,12 @@
 import styled from "@emotion/styled";
+import UploadProductEntry from "../UploadProductEntry";
 
 export default function UploadProducts() {
   return (
     <ProductImages>
-      <ProductImage>
-        <button type="button" className="img-remove">
-          <span className="ir">이미지 삭제</span>
-        </button>
-      </ProductImage>
-      <ProductImage>
-        <button type="button" className="img-remove">
-          <span className="ir">이미지 삭제</span>
-        </button>
-      </ProductImage>
-      <ProductImage>
-        <button type="button" className="img-remove">
-          <span className="ir">이미지 삭제</span>
-        </button>
-      </ProductImage>
+      <UploadProductEntry />
+      <UploadProductEntry />
+      <UploadProductEntry />
     </ProductImages>
   );
 }
@@ -37,17 +26,5 @@ const ProductImages = styled.ul`
     width: 304px;
     height: 228px;
     overflow: hidden;
-  }
-`;
-
-const ProductImage = styled.li`
-  .img-remove {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 22px;
-    height: 22px;
-    background: url("/assets/close.png");
-    background-size: contain;
   }
 `;
