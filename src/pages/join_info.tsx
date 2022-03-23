@@ -24,7 +24,7 @@ const JoinInfoContainer = styled.section`
   justify-content: center; 
   align-items: center;
   width: 100%; 
-  height: 100vh; 
+  height: 80vh; 
 
 `
 const JoinForm = styled.form`
