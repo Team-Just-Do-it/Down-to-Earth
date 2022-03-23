@@ -37,7 +37,6 @@ const ProductImages = styled.ul`
     width: 304px;
     height: 228px;
     overflow: hidden;
-    border: 0.5px solid var(--border-color);
   }
 `;
 

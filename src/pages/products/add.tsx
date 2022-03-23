@@ -56,6 +56,51 @@ export default function UploadProduct() {
     </Container>
   );
 }
+const Container = styled.header`
+  margin: 72px 0 59px 96px;
+  width: 100%;
+  height: 100%;
+
+  .ir {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 35px;
+    color: #000000;
+  }
+
+  .product-submit {
+    display: block;
+    width: 280px;
+    height: 50px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    background: #847258;
+    color: #ffffff;
+    margin: 120px 25%;
+  }
+`;
+
+const Main = styled.main`
+  display: flex;
+  h3 {
+    margin: 59px 0 21px;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 29px;
+    color: #000000;
+  }
+`;
 
 const BasicInfo = styled.div`
   h3 {
@@ -90,7 +135,7 @@ const ImageContainer = styled.div`
     width: 146px;
     height: 35px;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.8rem;
     line-height: 26px;
     color: #666666;
     background: #e5e5e5;
@@ -107,57 +152,11 @@ const PriceInfo = styled.div`
     margin-top: 16px;
     padding: 11px 22px;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 29px;
   }
 `;
 
 const PriceWrapper = styled.div`
   margin-left: 60px;
-`;
-
-const Main = styled.main`
-  display: flex;
-  h3 {
-    margin: 59px 0 21px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 29px;
-    color: #000000;
-  }
-`;
-
-const Container = styled.header`
-  margin: 72px 0 59px 96px;
-  width: 100%;
-  height: 100%;
-
-  .ir {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-  }
-
-  h2 {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 35px;
-    color: #000000;
-  }
-
-  .product-submit {
-    display: block;
-    width: 280px;
-    height: 50px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 29px;
-    background: #847258;
-    color: #ffffff;
-    margin: 120px 25%;
-  }
 `;
