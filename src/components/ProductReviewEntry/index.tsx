@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import SmallStar from "../shared/SmallStarRating";
-import CommentButton from "../shared/CommentButton";
+import Comment from "../Comment";
 
 export default function ProductReviewEntry() {
   return (
@@ -15,8 +15,14 @@ export default function ProductReviewEntry() {
 
       <ReviewInfo>
         <ReviewUserInfo>
-          <span className="user-nickname">nickname</span>
-          <span className="user-postdate">2020-03-01</span>
+          <div>
+            <span className="user-nickname">nickname</span>
+            <span className="user-postdate">2020-03-01</span>
+          </div>
+          <ReviewEdit>
+            <span>수정</span>
+            <span>삭제</span>
+          </ReviewEdit>
         </ReviewUserInfo>
 
         <ReviewText>
@@ -26,8 +32,7 @@ export default function ProductReviewEntry() {
           이상, 구하지 행복스럽고 위하여 그들의 가장 것이다. 착목한는 꽃이 어디
           있으며, 살았으며, 영락과 노래하며 운다.
         </ReviewText>
-
-        <CommentButton type="button">댓글 2</CommentButton>
+        <Comment />
       </ReviewInfo>
     </Review>
   );
@@ -88,6 +93,8 @@ const ReviewInfo = styled.div`
 
 const ReviewUserInfo = styled.div`
   margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
 
   .user-nickname {
     font-weight: 400;
@@ -101,6 +108,16 @@ const ReviewUserInfo = styled.div`
     font-weight: 400;
     font-size: 20px;
     line-height: 29px;
+    color: #666666;
+  }
+`;
+
+const ReviewEdit = styled.div`
+  span {
+    margin-left: 13px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
     color: #666666;
   }
 `;
