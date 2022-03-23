@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import SmallStar from "../shared/SmallStarRating";
-import Button from "../shared/Button";
+import CommentButton from "../shared/CommentButton";
 
 export default function ProductReviewEntry() {
   return (
@@ -27,7 +27,7 @@ export default function ProductReviewEntry() {
           있으며, 살았으며, 영락과 노래하며 운다.
         </ReviewText>
 
-        <Button type="button">댓글 2</Button>
+        <CommentButton type="button">댓글 2</CommentButton>
       </ReviewInfo>
     </Review>
   );
@@ -110,4 +110,5 @@ const ReviewText = styled.p`
   font-size: 20px;
   line-height: 29px;
   color: #666666;
+  margin-bottom: 11px;
 `;
