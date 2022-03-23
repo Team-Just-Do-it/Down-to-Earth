@@ -13,6 +13,15 @@ export const Navigation = () => {
         </ul> 
         <label htmlFor="search-bar"></label>
         <input type="text" placeholder="검색어를 입력해주세요"/> 
+        <LoggedInContainer>
+          <img src="/assets/user.svg" alt="user icon" /> 
+          <CartIconContainer>
+            <div>
+              <span>3</span>
+            </div>
+            <img src="/assets/cart.svg" alt="cart icon" />
+          </CartIconContainer> 
+        </LoggedInContainer>
         <JoinContainer>
           <Link href="/login">로그인</Link>
           <Link href="/join">회원가입</Link>
@@ -30,7 +39,7 @@ const Header = styled.header`
   height: 8rem;
   box-sizing: border-box; 
   padding: 0 10rem; 
-`;
+`
 
 const Navigator = styled.nav`
   display: flex; 
@@ -43,6 +52,7 @@ const Navigator = styled.nav`
     margin-bottom: 1rem;
     cursor: pointer; 
   }
+
   ul { 
     display: flex; 
     justify-content: space-evenly;
@@ -55,6 +65,7 @@ const Navigator = styled.nav`
       opacity: 0.3; 
     }  
   }
+
   input {
     background: url("/assets/search.svg") no-repeat 1rem 0.9rem; 
     width: 25rem;
@@ -64,12 +75,43 @@ const Navigator = styled.nav`
     box-sizing: border-box;
     padding:  0 4rem ;
   } 
-`;
+`
 
+// 로그인 성공 시 사용
+const LoggedInContainer = styled.div`
+  width: 10rem; 
+  display: flex; 
+  align-items: center;
+  justify-content: space-between; 
+  margin-top: 10px; 
+  display: none;
+  
+`
 const JoinContainer = styled.div`
   width: 12rem;
   display: flex; 
   justify-content: space-between;
   flex-shrink: 0; 
   font-size: 1.4rem;
+`
+
+const CartIconContainer = styled.div`    
+  position: relative; 
+
+  div {  
+    position: absolute; 
+    left: 1.3rem; 
+    top: 1.5rem;
+    width: 2rem; 
+    height: 2rem;
+    background: #847258;
+    border-radius: 2.4rem; 
+    text-align: center;
+  }
+  
+  span {
+    color: #FFF;  
+    line-height: 1.7;
+    font-size: 1.2rem; 
+  } 
 `
