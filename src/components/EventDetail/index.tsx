@@ -51,10 +51,10 @@ const EventDetail = () => {
 const EventContainer = styled.section`
   padding: 80px;
   h3 {
+    margin-bottom: 34px;
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 34px;
-    margin-bottom: 34px;
   }
 `;
 

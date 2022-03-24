@@ -13,8 +13,7 @@ const EventDetailPage: NextPage = () => {
 };
 
 const Container = styled.section`
-  padding-top: 72px;
-  padding-left: 96px;
+  padding: 72px 0 0 96px;
 `;
 
 export default EventDetailPage;
