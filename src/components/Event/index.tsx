@@ -6,20 +6,20 @@ const Event = () => {
     <EventContainer>
       <EventImage
         src="/assets/sample_event.png"
-        alt="상품 사진"
+        alt="이벤트 사진"
         width="380px"
         height="250px"
       />
       <EventContents>
-        <li className="event-content">
+        <ul className="event-content">
           <EventTitle>이벤트 제목</EventTitle>
           <EventPeriod>2022-03-01 ~ 2022-04-01</EventPeriod>
-        </li>
-        <li className="event-content">
+        </ul>
+        <ul className="event-content">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quae
           quia atque temporibus? Illum eos libero labore officiis qui facere
           minima a, obcaecati ipsum hic rerum cum quod, accusantium ducimus?
-        </li>
+        </ul>
       </EventContents>
     </EventContainer>
   );
@@ -29,7 +29,6 @@ const EventContainer = styled.section`
   display: flex;
   flex-direction: column;
   width: 380px;
-  height: 348px;
 `;
 
 const EventImage = styled(Image)`
