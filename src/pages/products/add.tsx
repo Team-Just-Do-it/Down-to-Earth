@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import PoseEitor from "../../components/Editor";
+import PostEditor from "../../components/Editor";
 import UploadProducts from "../../components/UploadProducts";
 
 export default function UploadProduct() {
@@ -8,29 +8,46 @@ export default function UploadProduct() {
       <h1 className="ir">상품등록 페이지</h1>
       <h2>상품등록</h2>
 
-      <Main>
-        <BasicInfo>
-          <h3>기본 정보</h3>
-          <select name="category" className="product-category">
-            <option value="none">카테고리</option>
-            <option value="beauty">뷰티</option>
-            <option value="bath">욕실</option>
-            <option value="kitchen">주방</option>
-            <option value="etc">잡화</option>
-          </select>
+      <ProductForm>
+        <section className="basicInfo-box">
+          <BasicInfo>
+            <legend>기본 정보</legend>
+            <select name="category" className="product-category">
+              <option value="none"> == 카테고리 ==</option>
+              <option value="beauty">뷰티</option>
+              <option value="bath">욕실</option>
+              <option value="kitchen">주방</option>
+              <option value="etc">잡화</option>
+            </select>
 
-          <input type="text" placeholder="상품명" className="product-name" />
-          <input type="text" placeholder="수량" />
+            <label htmlFor="productName">
+              <input
+                type="text"
+                placeholder="상품명"
+                id="productName"
+                className="product-name"
+              />
+            </label>
+            <label htmlFor="productQutantity">
+              <input type="text" placeholder="수량" id="productQutantity" />
+            </label>
+          </BasicInfo>
 
-          <PoseEitor />
-        </BasicInfo>
+          <PostEditor />
+        </section>
 
         <PriceWrapper>
-          <h3>가격 정보</h3>
           <PriceInfo>
-            <input type="text" placeholder="판매가" />
-            <input type="text" placeholder="할인가" />
-            <input type="text" placeholder="배송비" />
+            <legend>가격정보</legend>
+            <label htmlFor="price">
+              <input type="text" placeholder="판매가" id="price" />
+            </label>
+            <label htmlFor="discountPrice">
+              <input type="text" placeholder="할인가" id="discountPrice" />
+            </label>
+            <label htmlFor="shippingFee">
+              <input type="text" placeholder="배송비" id="shippingFee" />
+            </label>
           </PriceInfo>
           <ImageContainer>
             <div className="image-title">
@@ -38,7 +55,7 @@ export default function UploadProduct() {
               <label htmlFor="imgUpload">이미지 추가</label>
               <input
                 type="file"
-                accept="imgage/*"
+                accept="image/*"
                 id="imgUpload"
                 className="ir"
               />
@@ -49,24 +66,24 @@ export default function UploadProduct() {
             </section>
           </ImageContainer>
         </PriceWrapper>
-      </Main>
+      </ProductForm>
       <button type="button" className="product-submit">
         등록하기
       </button>
     </Container>
   );
 }
-const Container = styled.header`
+const Container = styled.div`
   margin: 72px 0 59px 96px;
   width: 100%;
   height: 100%;
 
   .ir {
     position: absolute;
-    left: -10000px;
-    top: auto;
+    clip: rect(0, 0, 0, 0);
     width: 1px;
     height: 1px;
+    margin: -1px;
     overflow: hidden;
   }
 
@@ -91,7 +108,7 @@ const Container = styled.header`
   }
 `;
 
-const Main = styled.main`
+const ProductForm = styled.form`
   display: flex;
   h3 {
     margin: 59px 0 21px;
@@ -100,18 +117,29 @@ const Main = styled.main`
     line-height: 29px;
     color: #000000;
   }
+
+  legend {
+    margin: 59px 0 21px;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 29px;
+    color: #000000;
+  }
 `;
 
-const BasicInfo = styled.div`
-  h3 {
-    margin: 59px 0 21px;
-  }
+const BasicInfo = styled.fieldset`
+  margin: 59px 0 21px;
 
   .product-category,
   input {
     margin: 10px;
     padding: 11px 24px;
     border: 1px solid #a2a2a2;
+    background: #ffffff;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    color: #666666;
   }
 
   .product-name {
@@ -144,11 +172,13 @@ const ImageContainer = styled.div`
   }
 `;
 
-const PriceInfo = styled.div`
+const PriceInfo = styled.fieldset`
   display: flex;
   flex-direction: column;
+  margin: 59px 0 21px;
 
   input {
+    width: 100%;
     margin-top: 16px;
     padding: 11px 22px;
     font-weight: 400;
@@ -157,6 +187,6 @@ const PriceInfo = styled.div`
   }
 `;
 
-const PriceWrapper = styled.div`
+const PriceWrapper = styled.section`
   margin-left: 60px;
 `;
