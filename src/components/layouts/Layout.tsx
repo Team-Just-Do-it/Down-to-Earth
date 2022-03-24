@@ -6,8 +6,8 @@ import { Footer } from "./Footer";
 export const Layout: React.FC = ({ children }) => {
   return (
     <Wrapper>
+      <Navigation />
       <BodyContent>
-        <Navigation />
         <Container>{children}</Container>
       </BodyContent>
       <Footer />
