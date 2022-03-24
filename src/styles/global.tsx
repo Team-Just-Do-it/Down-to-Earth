@@ -29,6 +29,10 @@ const style = css`
     cursor: pointer;
   }
 
+  li {
+    list-style: none;
+  }
+
   @font-face {
     font-family: "Noto Sans KR", sans-serif;
     font-style: thin;
