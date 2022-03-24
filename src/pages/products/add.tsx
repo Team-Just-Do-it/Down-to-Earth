@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
 import PostEditor from "../../components/Editor";
 import UploadProducts from "../../components/UploadProducts";
+import ProductAddButton from "../../components/shared/AddButton";
 
 export default function UploadProduct() {
   return (
     <Container>
       <h1 className="ir">상품등록 페이지</h1>
       <h2>상품등록</h2>
-
       <ProductForm>
         <section className="basicInfo-box">
           <BasicInfo>
@@ -67,9 +67,7 @@ export default function UploadProduct() {
           </ImageContainer>
         </PriceWrapper>
       </ProductForm>
-      <button type="button" className="product-submit">
-        등록하기
-      </button>
+      <ProductAddButton type="button">등록하기</ProductAddButton>
     </Container>
   );
 }
@@ -92,19 +90,6 @@ const Container = styled.div`
     font-size: 2.4rem;
     line-height: 35px;
     color: #000000;
-  }
-
-  .product-submit {
-    display: block;
-    width: 280px;
-    height: 50px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 29px;
-    background: #847258;
-    color: #ffffff;
-    margin: 120px 25%;
   }
 `;
 
