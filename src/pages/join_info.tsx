@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { NextPage } from "next";
 import styled from "@emotion/styled"
 import Router from "next/router";
+import theme from "../styles/theme";
 
 const Join: NextPage = () => {
   const [userNickname, setUserNickname] = useState<string>("");
@@ -100,10 +101,10 @@ const CheckButton = styled.button<ContainerTypeProps>`
   padding: 10px;
   background-color: ${(props) => 
   props.check ? "#CDC7BF;" : "#FFF;"}; 
-  border: 1px solid #847258;  
+  border: 1px solid ${theme.mainColor};  
 `
 const JoinButton = styled.button`
-  background-color: #847258;
+  background-color: ${theme.mainColor};
   color: #FFF; 
   border-radius: 10px; 
   font-weight: bold; 
