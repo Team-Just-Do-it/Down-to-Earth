@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
+import theme from "../../styles/theme";
 
 export const Navigation = () => {
   return (
@@ -42,10 +43,10 @@ const Header = styled.header`
 `
 
 const Navigator = styled.nav`
-  width: 100%; 
   display: flex; 
   justify-content: space-between;
   align-items: center; 
+  width: 100%; 
 
   img {
     height: 25px;
@@ -56,9 +57,9 @@ const Navigator = styled.nav`
   ul { 
     display: flex; 
     justify-content: space-evenly;
+    width: 30rem; 
     font-size: 1.8rem; 
     font-weight: bold; 
-    width: 30rem; 
     flex-shrink: 0;
     
     li:hover {
@@ -104,7 +105,7 @@ const CartIconContainer = styled.div`
     top: 15px;
     width: 20px; 
     height: 20px;
-    background: #847258;
+    background: ${theme.mainColor};
     border-radius: 24px; 
     text-align: center;
   }
