@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import sizes from "../../styles/sizes";
+import theme from "../../styles/theme";
 
 interface ItemsContainerProps {
   listTitle?: string;
@@ -32,7 +32,7 @@ const ItemsContainer = ({
 
 const Title = styled.div`
   margin-bottom: 41px;
-  font-size: ${sizes.large};
+  font-size: ${theme.fontSizes.large};
   font-weight: 700;
   line-height: 34px;
 `;
