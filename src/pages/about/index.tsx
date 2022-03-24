@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import Image from "next/image";
 import Event from "../../components/Event";
 import Product from "../../components/Product";
+import ItemsContainer from "../../components/shared/ItemsContainer";
 
 const MainPage: NextPage = () => {
   return (
@@ -15,19 +16,28 @@ const MainPage: NextPage = () => {
         layout="responsive"
       />
       <Container>
-        <Title>추천 상품</Title>
-        <ProductContainer>
+        <ItemsContainer
+          listTitle="추천 상품"
+          itemLength={4}
+          itemWidth={"270px"}
+          itemGap={"60px"}
+        >
           <Product />
           <Product />
           <Product />
           <Product />
-        </ProductContainer>
-        <Title>이벤트</Title>
-        <EventContainer>
+        </ItemsContainer>
+
+        <ItemsContainer
+          listTitle="이벤트"
+          itemLength={3}
+          itemWidth={"380px"}
+          itemGap={"60px"}
+        >
           <Event />
           <Event />
           <Event />
-        </EventContainer>
+        </ItemsContainer>
       </Container>
     </>
   );
@@ -35,28 +45,10 @@ const MainPage: NextPage = () => {
 
 const Container = styled.section`
   padding-left: 96px;
-`;
 
-const Title = styled.h2`
-  margin-top: 41px;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 34px;
-`;
-
-const ProductContainer = styled.article`
-  display: grid;
-  grid-template-columns: repeat(4, 270px);
-  gap: 60px;
-  margin-top: 41px;
-  margin-bottom: 18px;
-`;
-
-const EventContainer = styled.article`
-  display: grid;
-  grid-template-columns: repeat(3, 380px);
-  gap: 60px;
-  padding-top: 41px;
+  & > div {
+    margin-top: 40px;
+  }
 `;
 
 export default MainPage;
