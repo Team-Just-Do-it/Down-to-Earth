@@ -2,24 +2,57 @@ import React, { useState } from "react";
 import type { NextPage } from "next";
 import styled from "@emotion/styled";
 import Link from "next/link";
+import Router from "next/router";
 
 const Login: NextPage = () => {
-  const [idCheck, setIdCheck] = useState("");
-  const [idError, setIdError] = useState(false);
-  const [pwCheck, setPwCheck] = useState("");
-  const [pwError, setPwError] = useState(false);
+  const [userId, setUserId] = useState("");
+  const [userPw, setUserPw] = useState("");
+  const [userIdPwError, setUserIdPwError] = useState(false);
 
+  const handleId = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUserId(e.currentTarget.value);  
+    console.log(userId); 
+  }
+
+  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUserPw(e.currentTarget.value);  
+    console.log(userPw); 
+  }
+
+  const handleOnClickSubmit = () => {
+    if(userId && userPw) {
+      Router.push("/"); 
+    } else {
+      alert("아이디와 비밀번호를 입력해주세요")
+      setUserIdPwError(true); 
+    }
+
+  }
   return (
     <LoginContainer>
       <LoginForm>
         <h2>로그인</h2>
         <label htmlFor="user-id"></label>
-        <input type="text" id="user-id" placeholder="이메일" />
+        <input 
+          type="text" 
+          id="user-id" 
+          placeholder="이메일"
+          value={userId}
+          onChange={handleId}
+        />
         <label htmlFor="user-pw"></label>
-        <input type="password" id="user-pw" placeholder="비밀번호" />
-        <TextAlert>아이디 또는 비밀번호가 일치하지 않습니다.</TextAlert>
-        {/* {idError && <TextAlert>아이디 또는 비밀번호가 일치하지 않습니다.</TextAlert>}  */}
-        <LoginButton type="button">로그인</LoginButton>
+        <input 
+          type="password" 
+          id="user-pw" 
+          placeholder="비밀번호"
+          value={userPw}
+          onChange={handlePassword}
+        /> 
+        {userIdPwError && <TextAlert>아이디 또는 비밀번호가 일치하지 않습니다.</TextAlert>}
+        <LoginButton 
+          type="button"
+          onClick={handleOnClickSubmit}
+          >로그인</LoginButton>
         <KakaoLoginButton type="button">카카오로 로그인</KakaoLoginButton>
         <NaverLoginButton type="button">네이버로 로그인</NaverLoginButton>
         <TextJoin>
