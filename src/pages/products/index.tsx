@@ -2,18 +2,23 @@ import type { NextPage } from "next";
 import styled from "@emotion/styled";
 import ProductsList from "../../components/ProductsList";
 import Product from "../../components/Product";
+import ItemsContainer from "../../components/shared/ItemsContainer";
 
 const ProductPage: NextPage = () => {
   return (
     <Container>
       <ProductsList />
-      <ProductContainer>
+      <ItemsContainer
+        listTitle="추천 상품"
+        itemLength={4}
+        itemWidth={"270px"}
+        itemGap={"60px"}
+      >
         <Product />
         <Product />
         <Product />
         <Product />
-        <Product />
-      </ProductContainer>
+      </ItemsContainer>
     </Container>
   );
 };
@@ -21,13 +26,6 @@ const ProductPage: NextPage = () => {
 const Container = styled.section`
   padding-top: 72px;
   padding-left: 96px;
-`;
-
-const ProductContainer = styled.article`
-  display: grid;
-  grid-template-columns: repeat(4, 270px);
-  gap: 60px;
-  padding-top: 41px;
 `;
 
 export default ProductPage;
