@@ -39,12 +39,13 @@ const Join: NextPage = () => {
     
     // 비밀번호 유효성 체크
     if(!pwValidation.test(password)) {
-      alert("비밀번호를 확인해주세요 (영문 숫자 조합 6~12자")
+      alert("비밀번호를 확인해주세요 (영문 숫자 조합 6~12자)")
       validation = false; 
     }
     // 비밀번호 일치 체크
     if (password !== checkPassword) {
       setPasswordError(true); 
+      validation = false; 
     } else {
       setPasswordError(false);
     }
