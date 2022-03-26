@@ -7,11 +7,32 @@ export const Navigation = () => {
     <Header>
       <Navigator>
         <Link href="/"><img src="/assets/logo.png" alt="logo" /></Link> 
-        <ul>
-          <li><Link href="/about">about</Link></li>
-          <li><Link href="/products">products</Link></li>
-          <li><Link href="/events">events</Link></li>
-        </ul> 
+        <ProductList>
+          <li className="navigation-list"><Link href="/about">about</Link></li>
+          <li className="navigation-list">
+            <Link href="/products">products</Link>
+            <ProductCategoryLists>
+              <li className="product-category-list">
+                <Link href="/products">전체</Link>
+              </li>
+              <li className="product-category-list">
+                <Link href="/products">뷰티</Link>
+              </li>
+              <li className="product-category-list">
+                <Link href="/products">욕실</Link>
+              </li>
+              <li className="product-category-list">
+                <Link href="/products">주방</Link>
+              </li>
+              <li className="product-category-list">
+                <Link href="/products">잡화</Link>
+              </li>
+            </ProductCategoryLists>
+          </li>
+          <li className="navigation-list">
+            <Link href="/events">events</Link>
+          </li>
+        </ProductList> 
         <label htmlFor="search-bar"></label>
         <input type="text" placeholder="검색어를 입력해주세요"/> 
         <LoggedInContainer>
@@ -52,20 +73,8 @@ const Navigator = styled.nav`
     height: 25px;
     margin-bottom: 10px;
     cursor: pointer; 
-  }
-
-  ul { 
-    display: flex; 
-    justify-content: space-evenly;
-    width: 30rem; 
-    font-size: 1.8rem; 
-    font-weight: bold; 
-    flex-shrink: 0;
-    
-    li:hover {
-      opacity: 0.3; 
-    }  
-  }
+  } 
+  
 
   input {
     background: url("/assets/search.svg") no-repeat 1rem 0.9rem; 
@@ -76,6 +85,18 @@ const Navigator = styled.nav`
     box-sizing: border-box;
     padding:  0 40px;
   } 
+`
+
+const ProductList = styled.ul`
+position: relative; 
+  display: flex; 
+  justify-content: space-evenly;
+  width: 30rem;  
+  flex-shrink: 0;
+  .navigation-list {
+      font-size: 1.8rem; 
+      font-weight: bold;
+    } 
 `
 
 // 로그인 성공 시 사용
@@ -115,4 +136,32 @@ const CartIconContainer = styled.div`
     line-height: 1.7;
     font-size: 1.2rem; 
   } 
+`
+
+const ProductCategoryLists = styled.ul`
+  position: absolute; 
+  top: 40px;
+  right: 95px;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;  
+  width: 120px;  
+  border-radius: 5px;
+  background: #FFF;  
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.12);
+
+  .product-category-list {
+    width: 100%;
+    height: 100%; 
+    font-size: 1.6rem;
+    font-weight: 500;  
+    line-height: 3;
+    text-align: center;
+  }
+  .product-category-list:hover {
+    background: #EAE0D6; 
+    color: #FFF; 
+  }
 `
