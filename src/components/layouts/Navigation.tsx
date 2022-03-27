@@ -73,8 +73,6 @@ const Navigator = styled.nav`
     height: 25px;
     margin-bottom: 10px;
     cursor: pointer; 
-  } 
-  
 
   input {
     background: url("/assets/search.svg") no-repeat 1rem 0.9rem; 
