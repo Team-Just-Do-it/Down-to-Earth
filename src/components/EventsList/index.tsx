@@ -1,14 +1,30 @@
 import styled from "@emotion/styled";
+import { useRouter } from "next/router";
+import { useState } from "react";
+
+interface categoryProps {
+  curCategory: number;
+}
 
 export default function EventsList() {
+  const [curCategory, setCurCategory] = useState(1);
+  const categories = ["all", "promotion", "collaboration"];
+
+  const router = useRouter();
+
+  const handleClick = (category: number) => {
+    setCurCategory(category);
+    router.push(`/events?category=${categories[category - 1]}`);
+  };
+
   return (
     <Header>
       <h2>이벤트</h2>
-      <CategoryNav>
+      <CategoryNav curCategory={curCategory}>
         <ul className="events-category-list">
-          <li className="current">전체</li>
-          <li className="events-promotion">프로모션</li>
-          <li className="events-collaboration">콜라보레이션</li>
+          <li onClick={() => handleClick(1)}>전체</li>
+          <li onClick={() => handleClick(2)}>프로모션</li>
+          <li onClick={() => handleClick(3)}>콜라보레이션</li>
         </ul>
       </CategoryNav>
     </Header>
@@ -27,7 +43,7 @@ const Header = styled.header`
   }
 `;
 
-const CategoryNav = styled.nav`
+const CategoryNav = styled.nav<categoryProps>`
   width: 100%;
   max-width: 600px;
 
@@ -46,10 +62,9 @@ const CategoryNav = styled.nav`
     font-size: 20px;
     font-weight: 400;
     line-height: 29px;
-  }
-
-  .current {
-    color: #fff;
-    background-color: #847258;
+    &:nth-of-type(${(props) => props.curCategory}) {
+      color: #fff;
+      background-color: #847258;
+    }
   }
 `;
