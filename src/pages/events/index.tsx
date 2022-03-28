@@ -8,12 +8,7 @@ const EventPage: NextPage = () => {
   return (
     <Container>
       <EventsList />
-      <ItemsContainer
-        listTitle="이벤트"
-        itemLength={3}
-        itemWidth={"380px"}
-        itemGap={"60px"}
-      >
+      <ItemsContainer itemLength={3} itemWidth={"380px"} itemGap={"60px"}>
         <Event />
         <Event />
         <Event />

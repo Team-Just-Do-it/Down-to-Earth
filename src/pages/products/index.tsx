@@ -8,12 +8,7 @@ const ProductPage: NextPage = () => {
   return (
     <Container>
       <ProductsList />
-      <ItemsContainer
-        listTitle="추천 상품"
-        itemLength={4}
-        itemWidth={"270px"}
-        itemGap={"60px"}
-      >
+      <ItemsContainer itemLength={4} itemWidth={"270px"} itemGap={"60px"}>
         <Product />
         <Product />
         <Product />
