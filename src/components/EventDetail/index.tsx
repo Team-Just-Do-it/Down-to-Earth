@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
-import Comment from "../Comment";
 import ReplyComment from "../Comment/ReplyComment";
 import Product from "../Product";
 
 const EventDetail = () => {
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href);
+  };
   return (
     <EventContainer>
       <Event>
@@ -16,6 +18,7 @@ const EventDetail = () => {
             alt="공유 이미지"
             width="40px"
             height="40px"
+            onClick={handleShare}
           />
         </li>
         <Image
