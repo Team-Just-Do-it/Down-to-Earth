@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const Product = () => {
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState<boolean>(false);
 
-  const handleLike = (e: any) => {
+  const handleLike = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsLiked(!isLiked);
   };

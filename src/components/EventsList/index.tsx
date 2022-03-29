@@ -1,14 +1,15 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import theme from "../../styles/theme";
 
 interface categoryProps {
   curCategory: number;
 }
 
 export default function EventsList() {
-  const [curCategory, setCurCategory] = useState(1);
-  const categories = ["all", "promotion", "collaboration"];
+  const [curCategory, setCurCategory] = useState<number>(1);
+  const categories: string[] = ["all", "promotion", "collaboration"];
 
   const router = useRouter();
 
@@ -58,13 +59,14 @@ const CategoryNav = styled.nav<categoryProps>`
     align-items: center;
     width: 150px;
     margin-left: -1px;
-    border: 1px solid #847258;
+
+    border: 1px solid ${theme.mainColor};
     font-size: 20px;
     font-weight: 400;
     line-height: 29px;
     &:nth-of-type(${(props) => props.curCategory}) {
       color: #fff;
-      background-color: #847258;
+      background-color: ${theme.mainColor};
     }
   }
 `;
