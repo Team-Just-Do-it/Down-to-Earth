@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
-import ProductsList from "../ProductsList";
+//import ProductsList from "../ProductsList";
 import ProductReview from "../ProductReviewList";
 
 export default function ProductDetail() {
   return (
     <Main>
       <h1 className="ir">상품 디테일 페이지</h1>
-      <ProductsList />
+      {/*<ProductsList />*/}
 
       <section className="product-info-wrap">
         <ImageWrapper>

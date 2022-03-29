@@ -1,23 +1,44 @@
-import React, { useState } from "react";
-import UploadProduct from "./styles";
+import { useState } from "react";
+import UploadProduct from "./style";
 import useInput from "../../../hooks/useInput";
+import { ReturnType } from "../../../hooks/useInput";
+import { Category } from "../../../types/type";
+
+export interface UploadProductProps {
+  category: Category;
+  name: ReturnType;
+  quantatity: ReturnType;
+  description: ReturnType;
+  price: ReturnType;
+  discount: ReturnType;
+  shipping: ReturnType;
+  images: Array<Blob>;
+}
 
 export default function UploadProductContainer() {
-  type Category = "beauty" | "bath" | "kitchen" | "etc";
-
   const [category, setCategory] = useState<Category>("beauty");
-  const [name, setName] = useInput("");
-  const [quantatity, setQuantity] = useInput(0);
-  const [content, setContent] = useInput("");
-  const [description, setDescription] = useInput("");
+  const name = useInput("");
+  const quantatity = useInput(0);
+  const description = useInput("");
 
   //price Info
-  const [price, setPrice] = useInput(0);
-  const [discount, setDiscount] = useInput(0);
-  const [shipping, setShipping] = useInput(0);
+  const price = useInput(0);
+  const discount = useInput(0);
+  const shipping = useInput(0);
 
   //image
   const [images, setImages] = useState<Array<Blob>>([]);
 
-  return <UploadProduct />;
+  return (
+    <UploadProduct
+      category={category}
+      name={name}
+      quantatity={quantatity}
+      description={description}
+      price={price}
+      discount={discount}
+      shipping={shipping}
+      images={images}
+    />
+  );
 }

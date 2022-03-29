@@ -1,9 +1,15 @@
 import styled from "@emotion/styled";
-import PostEditor from "../../components/Editor";
-import UploadProducts from "../../components/UploadProducts";
-import ProductAddButton from "../../components/shared/AddButton";
+import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
+import PostEditor from "../../../components/Editor";
+import UploadProducts from "../../../components/UploadProducts";
+import ProductAddButton from "../../../components/shared/AddButton";
+import { UploadProductProps } from "./index";
 
-export default function UploadProduct() {
+export default function UploadProduct(
+  props: UploadProductProps
+): EmotionJSX.Element {
+  const { category, name, price, quantatity, description, shipping } = props;
+
   return (
     <Container>
       <h1 className="ir">상품등록 페이지</h1>
