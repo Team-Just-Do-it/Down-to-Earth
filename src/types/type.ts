@@ -3,3 +3,5 @@ export interface Example {
   src: string;
   name: string;
 }
+
+export type Category = "beauty" | "bath" | "kitchen" | "etc";
