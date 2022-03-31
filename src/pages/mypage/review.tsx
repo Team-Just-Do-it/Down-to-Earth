@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import StarFilled from "../../public/assets/star_filled.png";
-import StarOutlined from "../../public/assets/star_outlined.png";
+import StarFilled from "../../../public/assets/star_filled.png";
+import StarOutlined from "../../../public/assets/star_outlined.png";
 
 const ReviewPage: NextPage = () => {
   return (
