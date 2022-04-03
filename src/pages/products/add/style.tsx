@@ -14,7 +14,7 @@ export default function UploadProduct(
     name,
     price,
     quantity,
-    description,
+    handleContents,
     discount,
     images,
     shipping,
@@ -57,7 +57,7 @@ export default function UploadProduct(
             />
           </BasicInfo>
 
-          <PostEditor onChange={description} />
+          <PostEditor onChange={handleContents} />
         </section>
 
         <PriceWrapper>

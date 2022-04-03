@@ -9,7 +9,7 @@ export interface UploadProductProps {
   category: (ev: ChangeEvent<HTMLSelectElement>) => void;
   name: ReturnType;
   quantity: ReturnType;
-  description: (value: string) => void;
+  handleContents: (value: string) => void;
   price: ReturnType;
   discount: ReturnType;
   shipping: ReturnType;
@@ -75,7 +75,7 @@ export default function UploadProductContainer() {
       category={handleCategory}
       name={name}
       quantity={quantity}
-      description={handleContents}
+      handleContents={handleContents}
       price={price}
       discount={discount}
       shipping={shipping}
