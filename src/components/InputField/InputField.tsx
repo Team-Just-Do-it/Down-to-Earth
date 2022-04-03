@@ -17,7 +17,7 @@ export default function InputField({
   return (
     <InputLabel htmlFor={labelName}>
       <input
-        id={labelName}
+        name={labelName}
         type={type}
         placeholder={placeholder}
         onChange={onChange}
