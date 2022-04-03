@@ -1,8 +1,16 @@
 import styled from "@emotion/styled";
+import { ReturnObj } from "../../types/type";
 
-export default function UploadProductEntry() {
+interface UploadProductEntryProps {
+  image: string;
+}
+
+export default function UploadProductEntry(props: UploadProductEntryProps) {
+  const { image } = props;
+
   return (
     <ProductImage>
+      <img src={image} alt="seller-product-image" />
       <button type="button" className="img-remove">
         <span className="ir">이미지 삭제</span>
       </button>
@@ -19,5 +27,11 @@ const ProductImage = styled.li`
     height: 22px;
     background: url("/assets/close.png");
     background-size: contain;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `;

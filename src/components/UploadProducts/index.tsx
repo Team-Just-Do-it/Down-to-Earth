@@ -1,12 +1,20 @@
 import styled from "@emotion/styled";
 import UploadProductEntry from "../UploadProductEntry";
+import { UploadReturnObj } from "../../types/type";
 
-export default function UploadProducts() {
+interface UploadProductsProp {
+  images: UploadReturnObj[] | [];
+}
+
+export default function UploadProducts(props: UploadProductsProp) {
+  const { images } = props;
+
   return (
     <ProductImages>
-      <UploadProductEntry />
-      <UploadProductEntry />
-      <UploadProductEntry />
+      {images.map((image, itemIndex) => {
+        const { id, url }: { id: string; url: string } = image;
+        return <UploadProductEntry key={`${itemIndex}+${id}`} image={url} />;
+      })}
     </ProductImages>
   );
 }
