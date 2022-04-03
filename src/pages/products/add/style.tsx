@@ -4,6 +4,7 @@ import PostEditor from "../../../components/Editor";
 import UploadProducts from "../../../components/UploadProducts";
 import ProductAddButton from "../../../components/shared/AddButton";
 import { UploadProductProps } from "./index";
+import InputField from "../../../components/InputField/InputField";
 
 export default function UploadProduct(
   props: UploadProductProps
@@ -14,6 +15,7 @@ export default function UploadProduct(
     price,
     quantity,
     description,
+    discount,
     images,
     shipping,
     handleImage,
@@ -35,17 +37,19 @@ export default function UploadProduct(
               <option value="etc">잡화</option>
             </select>
 
-            <label htmlFor="productName">
-              <input
-                type="text"
-                placeholder="상품명"
-                id="productName"
-                className="product-name"
-              />
-            </label>
-            <label htmlFor="productQutantity">
-              <input type="text" placeholder="수량" id="productQutantity" />
-            </label>
+            <InputField
+              type="text"
+              labelName="productName"
+              placeholder="상품명"
+              controller={name}
+            />
+
+            <InputField
+              type="text"
+              labelName="productQuantity"
+              placeholder="수량"
+              controller={quantity}
+            />
           </BasicInfo>
 
           <PostEditor />
@@ -54,15 +58,25 @@ export default function UploadProduct(
         <PriceWrapper>
           <PriceInfo>
             <legend>가격정보</legend>
-            <label htmlFor="price">
-              <input type="text" placeholder="판매가" id="price" />
-            </label>
-            <label htmlFor="discountPrice">
-              <input type="text" placeholder="할인가" id="discountPrice" />
-            </label>
-            <label htmlFor="shippingFee">
-              <input type="text" placeholder="배송비" id="shippingFee" />
-            </label>
+
+            <InputField
+              type="text"
+              labelName="price"
+              placeholder="판매가"
+              controller={price}
+            />
+            <InputField
+              type="text"
+              labelName="discountPrice"
+              placeholder="할인가"
+              controller={discount}
+            />
+            <InputField
+              type="text"
+              labelName="shippingFee"
+              placeholder="배송비"
+              controller={shipping}
+            />
           </PriceInfo>
           <ImageContainer>
             <div className="image-title">

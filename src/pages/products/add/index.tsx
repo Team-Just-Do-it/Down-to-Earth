@@ -38,6 +38,8 @@ export default function UploadProductContainer() {
     setImages((images) => [...images, image]);
   };
 
+  console.log(price, "price");
+
   return (
     <UploadProduct
       category={category}
