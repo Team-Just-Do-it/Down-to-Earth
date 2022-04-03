@@ -1,19 +1,21 @@
 import styled from "@emotion/styled";
 import { HTMLInputTypeAttribute } from "react";
+import { ReturnType } from "../../hooks/useInput";
 
 interface InputFieldProps {
   placeholder: string;
   labelName: string;
   type: HTMLInputTypeAttribute;
-  controller: any;
+  controller: ReturnType;
 }
 
 export default function InputField({
   placeholder,
   labelName,
   type,
-  controller: { value, onChange },
+  controller,
 }: InputFieldProps) {
+  const { value, onChange } = controller;
   return (
     <InputLabel htmlFor={labelName}>
       <input

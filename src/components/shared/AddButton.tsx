@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { ChangeEvent } from "react";
 
 type ButtonType = "button" | "reset" | "submit";
 
