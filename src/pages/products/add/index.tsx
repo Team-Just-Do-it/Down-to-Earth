@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import UploadProduct from "./style";
 import useInput, { ReturnType } from "../../../hooks/useInput";
-import { Category } from "../../../types/type";
+import { Category, UploadReturnObj } from "../../../types/type";
+import fileUpload from "../../../utils/upload";
 
 export interface UploadProductProps {
   category: Category;
@@ -11,7 +12,8 @@ export interface UploadProductProps {
   price: ReturnType;
   discount: ReturnType;
   shipping: ReturnType;
-  images: Array<Blob>;
+  images: UploadReturnObj[] | [];
+  handleImage: (ev: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function UploadProductContainer() {
@@ -26,7 +28,15 @@ export default function UploadProductContainer() {
   const shipping = useInput(0);
 
   //image
-  const [images, setImages] = useState<Array<Blob>>([]);
+  const [images, setImages] = useState<Array<UploadReturnObj>>([]);
+
+  const handleImage = async (ev: ChangeEvent<HTMLInputElement>) => {
+    const target = ev.target;
+    const files = target.files! as FileList;
+    const image = await fileUpload(files);
+
+    setImages((images) => [...images, image]);
+  };
 
   return (
     <UploadProduct
@@ -38,6 +48,7 @@ export default function UploadProductContainer() {
       discount={discount}
       shipping={shipping}
       images={images}
+      handleImage={handleImage}
     />
   );
 }

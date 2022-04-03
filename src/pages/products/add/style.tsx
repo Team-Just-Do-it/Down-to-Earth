@@ -8,7 +8,16 @@ import { UploadProductProps } from "./index";
 export default function UploadProduct(
   props: UploadProductProps
 ): EmotionJSX.Element {
-  const { category, name, price, quantatity, description, shipping } = props;
+  const {
+    category,
+    name,
+    price,
+    quantity,
+    description,
+    images,
+    shipping,
+    handleImage,
+  } = props;
 
   return (
     <Container>
@@ -64,11 +73,12 @@ export default function UploadProduct(
                 accept="image/*"
                 id="imgUpload"
                 className="ir"
+                onChange={handleImage}
               />
             </div>
             <section className="upload-photo-list">
               <h4 className="ir">추가된 사진</h4>
-              <UploadProducts />
+              <UploadProducts images={images} />
             </section>
           </ImageContainer>
         </PriceWrapper>
