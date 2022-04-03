@@ -19,6 +19,7 @@ export default function UploadProduct(
     images,
     shipping,
     handleImage,
+    handleClick,
   } = props;
 
   return (
@@ -32,7 +33,7 @@ export default function UploadProduct(
             <select
               name="category"
               className="product-category"
-              onChange={(ev) => category(ev)}
+              onChange={category}
             >
               <option value="none"> == 카테고리 ==</option>
               <option value="beauty">뷰티</option>
@@ -101,7 +102,9 @@ export default function UploadProduct(
           </ImageContainer>
         </PriceWrapper>
       </ProductForm>
-      <ProductAddButton type="button">등록하기</ProductAddButton>
+      <ProductAddButton type="button" onClick={handleClick}>
+        등록하기
+      </ProductAddButton>
     </Container>
   );
 }

@@ -1,11 +1,12 @@
 import { ChangeEvent, useState } from "react";
+import { useRouter } from "next/router";
 import UploadProduct from "./style";
 import useInput, { ReturnType } from "../../../hooks/useInput";
 import { Category, UploadReturnObj } from "../../../types/type";
 import fileUpload from "../../../utils/upload";
 
 export interface UploadProductProps {
-  category: ReturnType;
+  category: (ev: ChangeEvent<HTMLSelectElement>) => void;
   name: ReturnType;
   quantity: ReturnType;
   description: (value: string) => void;
@@ -14,13 +15,15 @@ export interface UploadProductProps {
   shipping: ReturnType;
   images: UploadReturnObj[] | [];
   handleImage: (ev: ChangeEvent<HTMLInputElement>) => void;
+  handleClick: () => void;
 }
 
 export default function UploadProductContainer() {
-  const category = useInput<Category>("beauty");
+  const router = useRouter();
+  const [category, setCategory] = useState<Category>("beauty");
   const name = useInput("");
   const quantity = useInput(0);
-  const [contents, setContents] = useState("");
+  const [contents, setContents] = useState<string>("");
 
   //price Info
   const price = useInput(0);
@@ -42,9 +45,34 @@ export default function UploadProductContainer() {
     setContents(value);
   };
 
+  const handleCategory = (ev: ChangeEvent<HTMLSelectElement>) => {
+    const category: Category = ev.target.value as Category;
+    setCategory(category);
+  };
+
+  const handleClick = async () => {
+    try {
+      const data = {
+        category,
+        name: name.value,
+        quantity: quantity.value,
+        contents,
+        price: price.value,
+        discount: discount.value,
+        shipping: shipping.value,
+        images,
+      };
+      //전송 api 성공 시 page 이동
+
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <UploadProduct
-      category={category}
+      category={handleCategory}
       name={name}
       quantity={quantity}
       description={handleContents}
@@ -53,6 +81,7 @@ export default function UploadProductContainer() {
       shipping={shipping}
       images={images}
       handleImage={handleImage}
+      handleClick={handleClick}
     />
   );
 }
