@@ -29,7 +29,11 @@ export default function UploadProduct(
         <section className="basicInfo-box">
           <BasicInfo>
             <legend>기본 정보</legend>
-            <select name="category" className="product-category">
+            <select
+              name="category"
+              className="product-category"
+              onChange={(ev) => category(ev)}
+            >
               <option value="none"> == 카테고리 ==</option>
               <option value="beauty">뷰티</option>
               <option value="bath">욕실</option>
@@ -52,7 +56,7 @@ export default function UploadProduct(
             />
           </BasicInfo>
 
-          <PostEditor />
+          <PostEditor onChange={description} />
         </section>
 
         <PriceWrapper>

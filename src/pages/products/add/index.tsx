@@ -5,10 +5,10 @@ import { Category, UploadReturnObj } from "../../../types/type";
 import fileUpload from "../../../utils/upload";
 
 export interface UploadProductProps {
-  category: Category;
+  category: ReturnType;
   name: ReturnType;
   quantity: ReturnType;
-  description: ReturnType;
+  description: (value: string) => void;
   price: ReturnType;
   discount: ReturnType;
   shipping: ReturnType;
@@ -17,10 +17,10 @@ export interface UploadProductProps {
 }
 
 export default function UploadProductContainer() {
-  const [category, setCategory] = useState<Category>("beauty");
+  const category = useInput<Category>("beauty");
   const name = useInput("");
   const quantity = useInput(0);
-  const description = useInput("");
+  const [contents, setContents] = useState("");
 
   //price Info
   const price = useInput(0);
@@ -38,14 +38,16 @@ export default function UploadProductContainer() {
     setImages((images) => [...images, image]);
   };
 
-  console.log(price, "price");
+  const handleContents = (value: string) => {
+    setContents(value);
+  };
 
   return (
     <UploadProduct
       category={category}
       name={name}
       quantity={quantity}
-      description={description}
+      description={handleContents}
       price={price}
       discount={discount}
       shipping={shipping}
