@@ -1,28 +1,35 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
 import Link from "next/link";
+import EventProps from "../../interfaces/Event.interface";
+import { formDate } from "../../utils/formDate";
 
-const Event = () => {
+const Event = ({
+  eventId,
+  eventTitle,
+  eventStart,
+  eventEnd,
+  eventContent,
+  eventImage,
+}: EventProps) => {
   return (
     <EventContainer>
-      <Link href="/events/1">
+      <Link href={`/events/${eventId}`}>
         <a>
           <EventImage
-            src="/assets/sample_event.png"
+            src={eventImage}
             alt="이벤트 사진"
             width="380px"
             height="250px"
           />
           <EventContents>
             <ul className="event-content">
-              <EventTitle>이벤트 제목</EventTitle>
-              <EventPeriod>2022-03-01 ~ 2022-04-01</EventPeriod>
+              <EventTitle>{eventTitle}</EventTitle>
+              <EventPeriod>
+                {formDate(eventStart)} ~ {formDate(eventEnd)}
+              </EventPeriod>
             </ul>
-            <ul className="event-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quae
-              quia atque temporibus? Illum eos libero labore officiis qui facere
-              minima a, obcaecati ipsum hic rerum cum quod, accusantium ducimus?
-            </ul>
+            <ul className="event-content">{eventContent}</ul>
           </EventContents>
         </a>
       </Link>
@@ -41,7 +48,7 @@ const EventContainer = styled.section`
   }
 `;
 
-const EventImage = styled(Image)`
+const EventImage = styled.img`
   border-radius: 10px;
 `;
 
