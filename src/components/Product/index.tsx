@@ -2,8 +2,17 @@ import styled from "@emotion/styled";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import ProductsProps from "../../interfaces/Product.interface";
 
-const Product = () => {
+const Product = ({
+  productId,
+  productName,
+  productPrice,
+  productBrand,
+  productCategory,
+  productLike,
+  productImage,
+}: ProductsProps) => {
   const [isLiked, setIsLiked] = useState<boolean>(false);
 
   const handleLike = (e: React.MouseEvent) => {
@@ -12,10 +21,10 @@ const Product = () => {
   };
   return (
     <ProductContainer>
-      <Link href="/products/1">
+      <Link href={`/products/${productId}`}>
         <a>
           <ProductImage
-            src="/assets/sample_product.png"
+            src={productImage}
             alt="상품 사진"
             width="270px"
             height="270px"
@@ -23,7 +32,9 @@ const Product = () => {
           <ProductContents>
             <li className="product-content">
               <ProductHeader>
-                <ProductCategory>카테고리 | 브랜드명</ProductCategory>
+                <ProductCategory>
+                  {productCategory} | {productBrand}
+                </ProductCategory>
                 <Image
                   src={isLiked ? "/assets/like_fill.png" : "/assets/like.png"}
                   width="20px"
@@ -32,8 +43,10 @@ const Product = () => {
                 />
               </ProductHeader>
             </li>
-            <li className="product-content">상품 이름</li>
-            <li className="product-content">20,000원</li>
+            <li className="product-content">{productName}</li>
+            <li className="product-content">
+              {productPrice.toLocaleString()}원
+            </li>
           </ProductContents>
         </a>
       </Link>
@@ -51,7 +64,7 @@ const ProductContainer = styled.section`
   }
 `;
 
-const ProductImage = styled(Image)`
+const ProductImage = styled.img`
   border-radius: 10px;
 `;
 
